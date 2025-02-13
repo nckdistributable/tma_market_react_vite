@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  background: linear-gradient(to top right, #1E1F22, #19191d);
+  font-family: Arial, sans-serif;
+  color: #b3b3b3;
+}
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.main-container {
+  padding: 0px 0px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 15px;
+  align-content: flex-start;
+  overflow: hidden;
+  row-gap: 15px;
+}
+
+.outer-container-list-element:focus {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(3);
+  gap: 0px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.outer-container-list-element img {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  max-width: 100%;
+  margin: 0;
+  max-height: 200px;
+  height: 120px;
+  width: 120px;
+  border-radius: 8px;
+}
+
+@keyframes clickAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sticky-menu {
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: hwb(0 100% 0% / 0.575);
+  color: white;
+  height: 50 px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.menu-navbar {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+.menu-navbar a {
+  color: rgba(82, 19, 19, 0.336);
+  text-decoration: none;
+}
+
+.dotted-line {
+  width: 100%;
+  border-bottom: 1px solid #551e1e;
+  margin: 0 auto;
+}
+
+.market-list-element:hover {
+  background-color: #e0e0e0;
+}
+
+.flex-container-bellow {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  height: 100%;
+}
+
+.svg-clicked {
+  fill: red;
+  transform: scale(1.2);
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.divider {
+  height: 1px;
+  background-color: #cccccc00;
+  margin: 10px 0;
+}
+
+@keyframes buttonClickAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.menu-svg-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-svg-button.clicked {
+  animation: buttonClickAnimation 0.3s ease-in-out;
+  background: none;
+  border: none;
+}
+
+.menu-svg-button svg {
+  width: 24px;
+  height: 24px;
+  transition: fill 0.3s ease;
+  background: none;
+}
+
+.menu-svg-button:hover svg {
+  background: none;
+}
+
+.menu-svg-button:focus,
+.menu-svg-button:active {
+  background: none;
+  outline: none;
+}
