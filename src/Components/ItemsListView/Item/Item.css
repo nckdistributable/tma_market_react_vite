@@ -28,6 +28,13 @@
     grid-row-end: 2;
     margin: 0;
     padding: 10px;
+
+    /* Add your styles here */
+    color: inherit;
+    /* Inherit color from parent */
+    text-decoration: none;
+    /* Remove underline */
+    transition: color 0.3s ease;
 }
 
 .inner-market-list-element-description-container {
@@ -42,6 +49,30 @@
     overflow: clip;
     justify-content: center;
     align-items: center;
+}
+
+.inner-market-list-element-title:hover {
+    color: #ff7e5f;
+    /* Change color on hover */
+}
+
+.inner-market-list-element-title.clicked {
+    animation: clickAnimation 1s ease-in-out;
+    background-color: #ff7e5f;
+}
+
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .inner-market-list-element-description {
