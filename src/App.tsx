@@ -2,6 +2,7 @@ import './App.css';
 import Items from './Components/ItemsListView/ItemsPage/ItemsPage.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ItemDetailsPageLayout from './Components/ItemDetailView/PageLayout/ItemDetailsPageLayout.tsx';
+import Cart from './Components/Cart/Cart.tsx';
 
 export default function Home() {
 
@@ -19,7 +20,7 @@ export default function Home() {
     },
     {
       path: '/cart',
-      element: <div>Cart page</div>
+      element: <Cart></Cart>
     },
     {
       path: '/item/:itemId',

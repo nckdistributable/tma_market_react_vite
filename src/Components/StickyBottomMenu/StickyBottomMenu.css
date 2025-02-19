@@ -76,6 +76,11 @@ body {
   backdrop-filter: blur(10px);
 }
 
+.sticky-menu.hidden {
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
 .menu-navbar {
   display: flex;
   justify-content: space-around;

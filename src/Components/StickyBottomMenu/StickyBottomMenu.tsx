@@ -1,13 +1,28 @@
-
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './StickyBottomMenu.css';
-
+import { Link } from 'react-router-dom';
 
 export default function StickyBottomMenu() {
     const [cartButtonClicked, setCartButtonClicked] = useState(false);
     const [menuButtonClicked, setMenuButtonClicked] = useState(false);
     const [accountButtonClicked, setAccountButtonClicked] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        let lastScrollY = window.scrollY;
+        const handleScroll = () => {
+            if (window.scrollY > lastScrollY) {
+                setIsVisible(false);
+            } else {
+                setIsVisible(true);
+            }
+            lastScrollY = window.scrollY;
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const handleCartButtonClick = () => {
         setCartButtonClicked(true);
         setTimeout(() => {
@@ -29,8 +44,9 @@ export default function StickyBottomMenu() {
         }, 300);
     }
     return (
-        <div className="sticky-menu">
+        <div className={`sticky-menu ${isVisible ? '' : 'hidden'}`}>
             <nav className="menu-navbar">
+            <Link to={'/cart'} className="menu-link">
                 <button
                     type="button"
                     className={`${cartButtonClicked ? 'menu-svg-button clicked' : 'menu-svg-button'}`}
@@ -67,7 +83,8 @@ export default function StickyBottomMenu() {
                         />
                     </svg>
                 </button>
-
+            </Link>
+                
                 <button
                     type="button"
                     className={`${menuButtonClicked ? 'menu-svg-button clicked' : 'menu-svg-button'}`}

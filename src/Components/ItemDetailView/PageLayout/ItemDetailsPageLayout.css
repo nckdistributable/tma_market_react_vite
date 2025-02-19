@@ -2,7 +2,7 @@ body {
     background: linear-gradient(to top right, #1E1F22, #19191d);
     font-family: Arial, sans-serif;
     color: #b3b3b3;
-    height: 100vh;
+    height: 100%;
 }
 
 .item-detail-view {
@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     row-gap: 20px;
     padding-bottom: 60px;
+    background: linear-gradient(to top right, #1E1F22, #19191d);
 }
 
 img {
@@ -23,7 +24,6 @@ img {
     margin: 10px;
     align-self: center;
     justify-self: center;
-    /* margin: 0%; */
 }
 
 .item-description {
@@ -65,7 +65,6 @@ img {
     background: none;
     border: none;
     color: #007bff;
-    /* text-decoration: underline; */
     font-size: 1em;
     background-color: #b3b3b3;
     border-radius: 8px;
